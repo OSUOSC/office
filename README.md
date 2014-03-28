@@ -21,6 +21,8 @@ Installation
 1. Copy checkstallman.sh to desired deployment location and create a cron job to invoke it periodically.
 2. Copy office.php to web-accessible location.
 3. Deploy office-dead.php as office.php underneath /home. The directory can be created via the following method as root:
-    mount --bind / /mnt
-    mkdir -p /mnt/home/$username/public_html
-    chown -R $username. /mnt/home/$username
+
+        mount --bind / /mnt
+        mkdir -p /mnt/home/$username/public_html
+        chown -R $username. /mnt/home/$username
+
