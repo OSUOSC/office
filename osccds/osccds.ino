@@ -4,7 +4,20 @@
   Operates the OSC CDS Shield
   
   Main Operations:
-    1. Sends true/false
+    1. Office
+      * Send 'O' over serial comm
+      * 1 or 0 will be returned 
+      * 1 = Someone is predicted in the 
+      *   the office   
+    2. Calibrate
+      * Send 'C' over Serial comm
+      *   Every 1/4 second the CDS value
+      *   Will be printed
+      * Change CDS_THRESHOLD to the
+      *   value that corresponds to 
+      *   the dark room cutoff
+      * Any new value on Serial will stop 
+      *   calibration
   
   Authors:
     bsilvereagle - 21 Apr 14
@@ -21,9 +34,11 @@ int LED     = A2;
 int CDS     = A3;
 int SWITCH  = A4;
 
-//Is somewhere here?
+//Is someone here?
 boolean office = false;
 
+//Serial Bad
+int BAUDRATE = 115200;
 //Storage
 int readByte = 0;
 //Timer
@@ -46,7 +61,7 @@ void setup()
   digitalWrite(GND, LOW); //GND the board  
   
   //Start up the Serial Comm
-  Serial.begin(115200);
+  Serial.begin(BAUD_RATE);
   Serial.write("CDS Shield Started\n");
 }
 
