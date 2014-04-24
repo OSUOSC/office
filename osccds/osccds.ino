@@ -38,7 +38,7 @@ int SWITCH  = A4;
 boolean office = false;
 
 //Serial Bad
-int BAUDRATE = 115200;
+int BAUD_RATE = 9600;
 //Storage
 int readByte = 0;
 //Timer
@@ -54,11 +54,13 @@ void setup()
   pinMode(VCC, OUTPUT); 
   pinMode(GND, OUTPUT);
   pinMode(LED, OUTPUT);
-  pinMode(SWITCH, INPUT_PULLUP);
+  pinMode(SWITCH, INPUT);
   
   //Establish GND, VCC pins
   digitalWrite(VCC, HIGH);
   digitalWrite(GND, LOW); //GND the board  
+  
+  digitalWrite(SWITCH, HIGH);
   
   //Start up the Serial Comm
   Serial.begin(BAUD_RATE);
