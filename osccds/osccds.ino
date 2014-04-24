@@ -64,7 +64,7 @@ void setup()
   
   //Start up the Serial Comm
   Serial.begin(BAUD_RATE);
-  Serial.write("CDS Shield Started\n");
+  //Serial.write("CDS Shield Started\n");
 }
 
 //Listens for serial input and responds accordingly
